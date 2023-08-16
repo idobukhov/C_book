@@ -2,7 +2,7 @@
 
 #define MAXSYMBLINE 1000
 
-int getline(char line[], int MAXSYMBLINE);
+int getLine(char line[], int maxsymbline);
 void copy(char to[], char from[]);
 
 int main(void) {
@@ -12,7 +12,7 @@ int main(void) {
     char longest[MAXSYMBLINE];
     
     lenMaxLine = 0;
-    while ((lenCurrentLine = getline(currentLine, MAXSYMBLINE)) > 0) 
+    while ((lenCurrentLine = getLine(currentLine, MAXSYMBLINE)) > 0) 
         if (lenCurrentLine > lenMaxLine) {
             lenMaxLine = lenCurrentLine;
             copy(longest, currentLine);
@@ -23,7 +23,7 @@ int main(void) {
     return 0;
 }
 
-int getline(char s[], int lim) {
+int getLine(char s[], int lim) {
     int c, i;
 
     for (i=0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
