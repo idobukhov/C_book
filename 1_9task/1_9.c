@@ -3,9 +3,9 @@
 #define MAXSYMBLINE 1000
 
 int getline(char line[], int MAXSYMBLINE);
-void copy(char to[], char fromf[]);
+void copy(char to[], char from[]);
 
-int main() {
+int main(void) {
     int lenCurrentLine;
     int lenMaxLine;
     char currentLine[MAXSYMBLINE];
@@ -28,7 +28,7 @@ int getline(char s[], int lim) {
 
     for (i=0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i)
         s[i] = c;
-    if (c == 'n') {
+    if (c == '\n') {
             s[i] = c;
             ++i;
     }
